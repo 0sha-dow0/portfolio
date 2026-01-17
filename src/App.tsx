@@ -206,7 +206,7 @@ function App() {
               <div className="absolute -left-[13px] top-2 w-6 h-6 bg-brand-orange rounded-full"></div>
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-1">B.E. Electronics and Communication Engineering</h3>
+                  <h3 className="text-2xl font-extrabold uppercase tracking-tight mb-1">Bachelors of Engneering. Electronics and Communication Engineering</h3>
                   <p className="text-brand-orange text-sm font-semibold">Dr. Ambedkar Institute of Technology, Bengaluru</p>
                 </div>
                 <div className="text-right">
