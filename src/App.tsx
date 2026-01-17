@@ -2,23 +2,56 @@ import { GraduationCap, FileText, Briefcase, Code2, Mail, Linkedin, Github, Exte
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-white text-brand-black flex">
-      <aside className="fixed left-0 top-0 w-80 h-screen bg-brand-white px-10 py-16 flex flex-col justify-between border-r border-brand-light-gray/30 overflow-y-auto">
+    <div className="min-h-screen bg-brand-white text-brand-black flex flex-col lg:flex-row">
+      <aside
+  className="
+    relative w-full lg:w-80
+    lg:fixed lg:left-0 lg:top-0
+    lg:h-screen
+    bg-brand-white
+    px-6 lg:px-10
+    py-10 lg:py-16
+    flex flex-col justify-between
+    border-b lg:border-b-0 lg:border-r
+    border-brand-light-gray/30
+  "
+>
         <div>
           <div className="relative mb-12">
-            <div className="absolute inset-0 bg-brand-orange/25 pointer-events-none"></div>
-            <div className="relative bg-brand-dark-gray h-64 w-64 overflow-hidden">
+            <div className="absolute inset-0  pointer-events-none"></div>
+            <div className="relative bg-brand-dark-gray w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 overflow-hidden mx-auto lg:mx-0">
               <img src={`${import.meta.env.BASE_URL}image.jpeg`} alt="Profile" className="w-full h-full object-cover" />
             </div>
           </div>
 
           <div className="space-y-6">
-            <div>
-              <h1 className="text-4xl font-extrabold tracking-tight leading-tight uppercase mb-2">
-                SHAIKH<br />SHADAB<br />HOSSAIN
-              </h1>
-              <div className="h-1 w-12 bg-brand-orange mt-3"></div>
-            </div>
+            <div className="flex flex-col items-center lg:items-start">
+  {/* Name */}
+  <h1 className="font-extrabold tracking-tight uppercase mb-3 text-center lg:text-left">
+    {/* Mobile: single line */}
+    <span className="block lg:hidden text-2xl sm:text-3xl whitespace-nowrap">
+      SHAIKH SHADAB HOSSAIN
+    </span>
+
+    {/* Desktop: stacked */}
+    <span className="hidden lg:block text-4xl leading-tight">
+      SHAIKH
+      <br />
+      SHADAB
+      <br />
+      HOSSAIN
+    </span>
+  </h1>
+
+  {/* Orange bar */}
+  <div
+    className="
+      h-1 bg-brand-orange
+      w-full lg:w-12
+      mx-auto lg:mx-0
+    "
+  />
+</div>
 
             <div>
               {/* <p className="text-sm tracking-wide font-semibold text-brand-gray uppercase mb-2">
@@ -59,7 +92,8 @@ function App() {
         </div>
       </aside>
 
-      <main className="ml-80 w-full overflow-y-auto h-screen">
+      <main className="w-full lg:ml-80 overflow-y-auto">
+
         <section className="py-16 px-12">
           <h2 className="text-5xl font-extrabold uppercase tracking-tight mb-16 flex items-center gap-4">
             <Briefcase className="w-10 h-10 text-brand-orange" />
@@ -220,10 +254,18 @@ function App() {
         </section>
 
         <section className="py-16 px-12 border-t border-brand-light-gray/30">
-          <h2 className="text-5xl font-extrabold uppercase tracking-tight mb-16 flex items-center gap-4">
-            <FileText className="w-10 h-10 text-brand-orange" />
-            Research & Publications
-          </h2>
+          <h2 className="
+  text-3xl sm:text-4xl lg:text-5xl
+  font-extrabold uppercase tracking-tight
+  mb-12 flex items-start gap-3
+  break-words
+">
+  <FileText className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-brand-orange flex-shrink-0 mt-1" />
+  <span>
+    Research & Publications
+  </span>
+</h2>
+
 
           <div className="space-y-12 max-w-6xl">
             <div className="relative pl-8 border-l-2 border-brand-orange/30 hover:border-brand-orange transition-colors group">
@@ -288,9 +330,14 @@ function App() {
             Technical Expertise
           </h2>
 
-          <div className="grid grid-cols-3 gap-8 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
+
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Backend & APIs</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Backend & APIs</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">GraphQL</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Node.js</span>
@@ -300,7 +347,11 @@ function App() {
             </div>
 
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Frontend & Mobile</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Frontend & Mobile</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">React.js</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">TypeScript</span>
@@ -309,7 +360,11 @@ function App() {
             </div>
 
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Systems & Data</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Systems & Data</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Kafka</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">PostgreSQL</span>
@@ -319,7 +374,11 @@ function App() {
             </div>
 
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Languages</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Languages</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">C++</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Python</span>
@@ -328,7 +387,11 @@ function App() {
             </div>
 
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Tools & Platforms</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Tools & Platforms</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Jira</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">CI/CD</span>
@@ -338,7 +401,11 @@ function App() {
             </div>
 
             <div className="relative pl-6 border-l-2 border-brand-orange/30">
-              <h3 className="text-lg font-extrabold mb-4 text-brand-orange uppercase tracking-wide">Business Skills</h3>
+              <h3 className="
+  text-base font-extrabold mb-4
+  text-brand-orange uppercase tracking-wide
+  break-words
+">Business Skills</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Product Management</span>
                 <span className="px-3 py-1 bg-brand-white border border-brand-light-gray text-xs uppercase tracking-wider">Agile Scrum</span>
